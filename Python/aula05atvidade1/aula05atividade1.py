@@ -1,8 +1,8 @@
 import os
-lista = []
+alunos = []
 def alterar():
-    os.system("cls")
     while True:
+        os.system("cls")
         print("-----------------------------------------------------------------------------------\n")
         print("Alterar aluno\n")
         print("1 - Adicionar aluno")
@@ -11,7 +11,7 @@ def alterar():
         print("-----------------------------------------------------------------------------------\n")
         optionAlterar = int(input("Digite sua escolha: "))
         if optionAlterar == 1:
-            adcionar()
+            adicionar()
         elif optionAlterar == 2:
             excluir()
         elif optionAlterar == 3:
@@ -19,26 +19,26 @@ def alterar():
             break
         else:
             print("Digite um número válido")
-def adcionar():
-    os.system("cls")
+def adicionar():
     while True:
+        os.system("cls")
         print("-----------------------------------------------------------------------------------\n")
-        print("Adcionar aluno\n")
+        print("Adicionar aluno\n")
         print("1 - Adicionar aluno")
         print("2 - Voltar\n")
         print("-----------------------------------------------------------------------------------\n")
         optionAdicionar = int(input("Digite sua escolha: "))
         if optionAdicionar == 1: 
-            aluno = input("Digite o nome do(a) aluno(a)")
-            lista.append(aluno)
+            aluno = input("Digite o nome do(a) aluno(a): ")
+            alunos.append(aluno)
         elif optionAdicionar == 2:
             print("Voltando...")
             break
         else:
             print("Digite um número válido")
 def excluir():
-    os.system("cls")
     while True:
+        os.system("cls")
         print("-----------------------------------------------------------------------------------\n")
         print("Excluir aluno\n")
         print("1 - Excluir aluno")
@@ -46,27 +46,33 @@ def excluir():
         print("-----------------------------------------------------------------------------------\n")
         optionExcluir = int(input("Digite sua escolha: "))
         if optionExcluir == 1:
-
-
-
-
-            nome = input("Digite o nome do aluno:")
-            lista.remove(nome)
-            print(f"({nome} foi excluido)")
+            print("-----------------------------------------------------------------------------------\n")
+            for nome in alunos:
+                print(nome)
+            print("\n")
+            print("-----------------------------------------------------------------------------------\n")
+            nome = input("Digite o nome do aluno: ")
+            if nome in alunos:
+                alunos.remove(nome)
+                print(f"({nome} foi excluido)")
+            else:
+                print("Aluno não encontrado")
         elif optionExcluir == 2:
             print("Voltando...")
             break
         else:
             print("Digite um número válido")
 def listaAluno():
-    os.system("cls")
     while True:
+        os.system("cls")
         print("-----------------------------------------------------------------------------------\n")
-        if lista:
-            for nome in lista():
+        if alunos:
+            print("Lista de aluno\n")
+            for nome in alunos:
                 print(nome)
+            print("\n")
             print("-----------------------------------------------------------------------------------\n")
-            optionLista = int(input("Digite 0 para sair: "))
+            optionLista = int(input("Digite 0 para voltar: "))
             if optionLista == 0:
                 print("Voltando...")
                 break
