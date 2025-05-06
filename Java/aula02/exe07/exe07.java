@@ -78,12 +78,38 @@ public class exe07 {
         juros = juros / 100;
         juros = 1 + juros;
 
-        Double M = capitalInicial * Math.pow(juros, temp);
+        Double M;
+        temp = progresso * temp;
         
         if ((progresso == 1) && (temp >= 1)) {
             for (int i = 1; i <= temp; i++) {
-
+                M = capitalInicial * Math.pow(juros, i);
+                System.out.printf("Ano %d: %lf", i, M);
             }
         }
+        else if ((progresso == 2) && (temp >= 1)) {
+            for (int i = 1; i <= temp; i++) {
+                M = capitalInicial * Math.pow(juros, i);
+                System.out.printf("Semestre %d: %lf", i, M);
+            }
+        }
+        else if ((progresso == 4) && (temp >= 1)) {
+            for (int i = 1; i <= temp; i++) {
+                M = capitalInicial * Math.pow(juros, i);
+                System.out.printf("Trimestre %d: %lf", i, M);
+            }
+        }
+        else if ((progresso == 12) && (temp >= 1)) {
+            for (int i = 1; i <= temp; i++) {
+                M = capitalInicial * Math.pow(juros, i);
+                System.out.printf("Ano %d: %lf", i, M);
+            }
+        }
+        else {
+            System.out.printf("Digite números válidos...");
+        }
+        M = capitalInicial * Math.pow(juros, temp);
+        System.out.printf("Montante final: %lf", M);
+        input.close();
     }
 }
