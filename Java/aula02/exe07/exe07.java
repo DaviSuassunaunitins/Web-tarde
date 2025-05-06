@@ -29,7 +29,7 @@ public class exe07 {
             System.out.printf("\nDigite em quantos anos os juros serão válidos: ");
             temp = input.nextDouble();
             input.nextLine();
-            System.out.printf("\nDigite a taxa de juros anual (%): ");
+            System.out.printf("\nDigite a taxa de juros anual (%%): ");
             juros = input.nextFloat();
             input.nextLine();
             progresso = 1;
@@ -39,7 +39,7 @@ public class exe07 {
             System.out.printf("\nDigite em quantos semestres os juros serão válidos: ");
             temp = input.nextDouble();
             input.nextLine();
-            System.out.printf("\nDigite a taxa de juros semestral (%): ");
+            System.out.printf("\nDigite a taxa de juros semestral (%%): ");
             juros = input.nextFloat();
             input.nextLine();
             progresso = 2;
@@ -49,7 +49,7 @@ public class exe07 {
             System.out.printf("\nDigite em quantos trimestres os juros serão válidos: ");
             temp = input.nextDouble();
             input.nextLine();
-            System.out.printf("\nDigite a taxa de juros trimestral (%): ");
+            System.out.printf("\nDigite a taxa de juros trimestral (%%): ");
             juros = input.nextFloat();
             input.nextLine();
             progresso = 4;
@@ -59,7 +59,7 @@ public class exe07 {
             System.out.printf("\nDigite em quantos meses os juros serão válidos: ");
             temp = input.nextDouble();
             input.nextLine();
-            System.out.printf("\nDigite a taxa de juros mensal (%): ");
+            System.out.printf("\nDigite a taxa de juros mensal (%%): ");
             juros = input.nextFloat();
             input.nextLine();
             progresso = 12;
@@ -71,9 +71,9 @@ public class exe07 {
 
         
         System.out.printf("\n--- Resultado ---\n");
-        System.out.printf("Capital inicial: R$ %5.2f", capitalInicial);
-        System.out.printf("Taxa de juros: %4.2f%% %s", juros, nomeTemp);
-        System.out.printf("Período total: ");
+        System.out.printf("Capital inicial: R$ %5.2f\n", capitalInicial);
+        System.out.printf("Taxa de juros: %4.2f%% %s\n", juros, nomeTemp);
+        System.out.printf("Período total: \n");
 
         juros = juros / 100;
         juros = 1 + juros;
@@ -84,32 +84,32 @@ public class exe07 {
         if ((progresso == 1) && (temp >= 1)) {
             for (int i = 1; i <= temp; i++) {
                 M = capitalInicial * Math.pow(juros, i);
-                System.out.printf("Ano %d: %lf", i, M);
+                System.out.printf("Ano %d: %.2f\n", i, M);
             }
         }
         else if ((progresso == 2) && (temp >= 1)) {
             for (int i = 1; i <= temp; i++) {
                 M = capitalInicial * Math.pow(juros, i);
-                System.out.printf("Semestre %d: %lf", i, M);
+                System.out.printf("Semestre %d: %.2f\n", i, M);
             }
         }
         else if ((progresso == 4) && (temp >= 1)) {
             for (int i = 1; i <= temp; i++) {
                 M = capitalInicial * Math.pow(juros, i);
-                System.out.printf("Trimestre %d: %lf", i, M);
+                System.out.printf("Trimestre %d: %.2f\n", i, M);
             }
         }
         else if ((progresso == 12) && (temp >= 1)) {
             for (int i = 1; i <= temp; i++) {
                 M = capitalInicial * Math.pow(juros, i);
-                System.out.printf("Ano %d: %lf", i, M);
+                System.out.printf("Mensal %d: %.2f\n", i, M);
             }
         }
         else {
             System.out.printf("Digite números válidos...");
         }
         M = capitalInicial * Math.pow(juros, temp);
-        System.out.printf("Montante final: %lf", M);
+        System.out.printf("Montante final: %.2f", M);
         input.close();
     }
 }
